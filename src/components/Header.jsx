@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-const Header = ({ username, onAllTweets, onMyTweets, onLogout }) => {
+const Header = memo(({ username, onAllTweets, onMyTweets, onLogout }) => {
   return (
     <header className="header">
       <div className="logo">
@@ -19,6 +19,6 @@ const Header = ({ username, onAllTweets, onMyTweets, onLogout }) => {
       )}
     </header>
   );
-};
+});
 
 export default Header;

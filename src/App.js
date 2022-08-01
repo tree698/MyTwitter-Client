@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import AllTweets from './pages/AllTweets';
-import MyTweets from './pages/MyTweets';
+import Header from './components/header';
+import AllTweets from './pages/allTweets';
+import MyTweets from './pages/myTweets';
 
 const App = (props) => {
   return (
