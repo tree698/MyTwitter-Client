@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import AuthService from './service/auth';
 import TweetService from './service/tweet';
+import { BrowerRouter } from 'react-router-dom';
 import { AuthErrorEventBus, AuthProvider } from './context/authContext';
 
 const baseURL = process.env.REACT_APP_BASE_URL;
@@ -14,11 +15,13 @@ const tweetService = new TweetService(baseURL);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AuthProvider
-      authService={authService}
-      authErrorEventBus={authErrorEventBus}
-    >
-      <App tweetService={tweetService} />
-    </AuthProvider>
+    <BrowerRouter>
+      <AuthProvider
+        authService={authService}
+        authErrorEventBus={authErrorEventBus}
+      >
+        <App tweetService={tweetService} />
+      </AuthProvider>
+    </BrowerRouter>
   </React.StrictMode>
 );
