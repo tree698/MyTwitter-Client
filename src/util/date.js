@@ -1,6 +1,6 @@
 export default function parseDate(tdate) {
   const created = new Date(Date.parse(tdate));
-  const now = Date.now();
+  const now = new Date();
   const diff = Math.floor((now - created) / 1000);
   if (diff <= 1) {
     return 'just now';
@@ -33,7 +33,7 @@ export default function parseDate(tdate) {
     return Math.round(diff / 86400) + ' days ago';
   }
   if (diff <= 777600) {
-    return '1 week age';
+    return '1 week ago';
   }
   const month = created.toLocaleDateString('default', { month: 'long' });
   return `on ${month} ${created.getDate()}`;

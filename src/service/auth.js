@@ -17,7 +17,7 @@ export default class AuthService {
     return;
   }
 
-  async singup(username, password, name, email, url) {
+  async signup(username, password, name, email, url) {
     return {
       username: 'ellie',
       token: 'abc1234',

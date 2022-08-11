@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-const Banner = ({ text, isAlert }) => (
+const Banner = memo(({ text, isAlert }) => (
   <>
     {text && (
-      <P className={`banner ${isAlert ? 'banner-red' : 'banner-green'}`}>
+      <p className={`banner ${isAlert ? 'banner-red' : 'banner-green'}`}>
         {text}
-      </P>
+      </p>
     )}
   </>
-);
-
+));
 export default Banner;

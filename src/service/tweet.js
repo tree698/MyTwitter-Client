@@ -36,7 +36,7 @@ export default class TweetService {
   async updateTweet(tweetId, text) {
     const tweet = this.tweets.find((tweet) => tweet.id === tweetId);
     if (!tweet) {
-      throw new Error('tweet not found');
+      throw new Error('tweet not found!');
     }
     tweet.text = text;
     return tweet;

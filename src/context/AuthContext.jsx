@@ -8,10 +8,10 @@ import {
   useMemo,
   useState,
 } from 'react';
-import Header from '../components/header';
-import Login from '../pages/login';
+import Header from '../components/Header';
+import Login from '../pages/Login';
 
-const AuthContext = createContext();
+const AuthContext = createContext({});
 
 const contextRef = createRef();
 
@@ -22,6 +22,7 @@ export function AuthProvider({ authService, authErrorEventBus, children }) {
 
   useEffect(() => {
     authErrorEventBus.listen((err) => {
+      console.log(err);
       setUser(undefined);
     });
   }, [authErrorEventBus]);
@@ -30,7 +31,7 @@ export function AuthProvider({ authService, authErrorEventBus, children }) {
     authService.me().then(setUser).catch(console.error);
   }, [authService]);
 
-  const signup = useCallback(
+  const signUp = useCallback(
     async (username, password, name, email, url) =>
       authService
         .signup(username, password, name, email, url)
@@ -38,7 +39,7 @@ export function AuthProvider({ authService, authErrorEventBus, children }) {
     [authService]
   );
 
-  const login = useCallback(
+  const logIn = useCallback(
     async (username, password) =>
       authService.login(username, password).then((user) => setUser(user)),
     [authService]
@@ -52,11 +53,11 @@ export function AuthProvider({ authService, authErrorEventBus, children }) {
   const context = useMemo(
     () => ({
       user,
-      login,
+      signUp,
+      logIn,
       logout,
-      signup,
     }),
-    [user, login, logout, signup]
+    [user, signUp, logIn, logout]
   );
 
   return (
@@ -64,9 +65,9 @@ export function AuthProvider({ authService, authErrorEventBus, children }) {
       {user ? (
         children
       ) : (
-        <div className="app">
+        <div className='app'>
           <Header />
-          <Login onSignup={signup} onLogin={login} />
+          <Login onSignUp={signUp} onLogin={logIn} />
         </div>
       )}
     </AuthContext.Provider>

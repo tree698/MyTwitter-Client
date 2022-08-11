@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Banner from '../components/banner';
+import Banner from '../components/Banner';
 
-const Login = ({ onLogin, onSignup }) => {
+const Login = ({ onSignUp, onLogin }) => {
   const [signup, setSignup] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -14,7 +14,7 @@ const Login = ({ onLogin, onSignup }) => {
   const onSubmit = (event) => {
     event.preventDefault();
     if (signup) {
-      onSignup(username, password, name, email, url).catch(setError);
+      onSignUp(username, password, name, email, url).catch(setError);
     } else {
       onLogin(username, password).catch(setError);
     }
@@ -49,70 +49,70 @@ const Login = ({ onLogin, onSignup }) => {
   return (
     <>
       <Banner text={text} isAlert={isAlert} />
-      <form className="form-auth" onSubmit={onSubmit}>
+      <form className='auth-form' onSubmit={onSubmit}>
         <input
-          type="text"
-          name="username"
+          name='username'
+          type='text'
+          placeholder='Id'
           value={username}
-          placeholder="ID"
           onChange={onChange}
-          className="form-input"
+          className='form-input'
           required
         />
         <input
-          type="password"
-          name="password"
+          name='password'
+          type='password'
+          placeholder='Password'
           value={password}
-          placeholder="Password"
+          className='form-input'
           onChange={onChange}
-          className="form-input"
         />
         {signup && (
           <input
-            type="text"
-            name="name"
+            name='name'
+            type='text'
+            placeholder='Name'
             value={name}
-            placeholder="Name"
             onChange={onChange}
-            className="form-input"
+            className='form-input'
             required
           />
         )}
         {signup && (
           <input
-            type="email"
-            name="email"
+            name='email'
+            type='email'
+            placeholder='Email'
             value={email}
-            placeholder="Email"
             onChange={onChange}
-            className="form-input"
+            className='form-input'
             required
           />
         )}
         {signup && (
           <input
-            type="url"
-            name="url"
+            name='url'
+            type='url'
+            placeholder='Profile Image URL'
             value={url}
-            placeholder="Profile Image URL"
             onChange={onChange}
-            className="form-input"
+            className='form-input'
           />
         )}
+        <div className='form-signup'>
+          <input
+            name='signup'
+            id='signup'
+            type='checkbox'
+            onChange={onChange}
+            checked={signup}
+          />
+          <label htmlFor='signup'> Create a new account?</label>
+        </div>
+        <button className='form-btn auth-form-btn' type='submit'>
+          {signup ? 'Sign Up' : 'Sign In'}
+        </button>
       </form>
-      <div className="form-signup">
-        <input
-          type="checkbox"
-          name="signup"
-          id="signup"
-          onChange={onChange}
-          checked={signup}
-        />
-        <label htmlFor="signup">Create a new account?</label>
-      </div>
-      <button type="submit" className="form-btn auth-form-btn">
-        {signup ? 'Sign Up' : 'Sign In'}
-      </button>
     </>
   );
 };
