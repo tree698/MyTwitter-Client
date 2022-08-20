@@ -1,28 +1,30 @@
 export default class HttpClient {
-  constructor(baseURL, authErrorEvent) {
+  constructor(baseURL, authErrorEventBus) {
     this.baseURL = baseURL;
-    this.authErrorEvent = authErrorEvent;
+    this.authErrorEventBus = authErrorEventBus;
   }
 
   async fetch(url, options) {
-    const response = await fetch(`${this.baseURL}/${url}`, {
+    const res = await fetch(`${this.baseURL}${url}`, {
       ...options,
-      headers: { 'Content-Type': 'application/json' },
-      ...options.headers,
+      headers: {
+        'Content-Type': 'application/json',
+        ...options.headers,
+      },
     });
-
     let data;
     try {
-      data = await response.json();
+      data = await res.json();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
-    if (response.status > 299 || response.status < 200) {
+
+    if (res.status > 299 || res.status < 200) {
       const message =
-        data && data.message ? data.message : 'Something went wrong';
+        data && data.message ? data.message : 'Something went wrong! 🤪';
       const error = new Error(message);
-      if (response.status === 401) {
-        this.authErrorEvent.notify(error);
+      if (res.status === 401) {
+        this.authErrorEventBus.notify(error);
         return;
       }
       throw error;
