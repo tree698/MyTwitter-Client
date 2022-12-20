@@ -1,13 +1,13 @@
-# My Twitter (Client)
+# My Twitter (클라이언트 사이드)
 
-## 소개
-- 간단한 채팅 앱(Chatting App)을 구현하는 코딩 학습
-- 클라이언트 사이드와 서버 사이드로 구현됨
+## :white_check_mark:&nbsp;소개
+- (목적) 채팅 앱(Chatting App)을 구현하는 코딩 학습
+- 클라이언트 사이드와 서버 사이드를 각각 구현함
 
-## 서버 사이드 레포지토리(Repository)
+## :white_check_mark:&nbsp;서버 사이드 레포지토리(Repository)
 - [https://github.com/tree698/MyTwitter-Server](https://github.com/tree698/MyTwitter-Server)
 
-## 클라이언트 사이드 스택
+## :white_check_mark:&nbsp;클라이언트 사이드 스택
 ![React](https://img.shields.io/badge/-React-007ACC?style=flat&logo=React)
 ![ReactRouter](https://img.shields.io/badge/-ReactRouter-yellowgreen?style=flat&logo=ReactRouter)
 ![PostCSS](https://img.shields.io/badge/-PostCSS-green?style=flat&logo=PostCss)
@@ -18,7 +18,7 @@
 ![yarn](https://img.shields.io/badge/-yarn-blue?style=flat&logo=yarn)
 
 
-## 주요 기능
+## :white_check_mark:&nbsp;주요 기능
 - Log in, Log out, Sign up 기능
 - 실시간 채팅 기능
 - 메세지 작성 시간 화면에 표시 기능
@@ -26,7 +26,7 @@
 - 자신이 작성한 메세지 삭제 기능
 - 사용자가 프로필 사진을 업로드하지 않았을 경우, 이름의 첫글자로 표시 기능
 
-## 데모
+## :white_check_mark:&nbsp;데모
 |**스크린 샷**|
 |:--:|
 |<img width="675" alt="스크린샷 2022-12-19 오후 6 15 08" src="https://user-images.githubusercontent.com/53497516/208639751-40f4fdd7-0f13-4ea7-8996-dbf48b80d049.png">|
@@ -38,5 +38,5 @@
 
 
 
-## 배포
+## :white_check_mark:&nbsp;배포
 - 추후 배포 예정
