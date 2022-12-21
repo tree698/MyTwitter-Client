@@ -12,7 +12,7 @@
 ![ReactRouter](https://img.shields.io/badge/-ReactRouter-yellowgreen?style=flat&logo=ReactRouter)
 ![PostCSS](https://img.shields.io/badge/-PostCSS-green?style=flat&logo=PostCss)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-%23F7DF1C?style=flate&logo=javascript&logoColor=000000&labelColor=%23F7DF1C&color=%23F7DF1C)
-![HTML](https://img.shields.io/badge/-HTML-F05032?style=flat&logo=HTML)
+![HTML](https://img.shields.io/badge/-HTML5-F05032?style=flate&logo=html5&logoColor=ffffff)
 ![socketIO](https://img.shields.io/badge/-socketIO-blueviolet?style=flat&logo=socketIO)
 ![npm](https://img.shields.io/badge/-npm-lightgrey?style=flat&logo=npm)
 ![yarn](https://img.shields.io/badge/-yarn-blue?style=flat&logo=yarn)
